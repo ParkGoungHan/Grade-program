@@ -1,9 +1,15 @@
 package sungjuk;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable{
+
+	private static final long serialVersionUID = -2904785696690499366L;
+
 	String name;
 	String studentId;
 	int jumsu;
+	
 	public Student(String name, String studentId, int jumsu) {
 		super();
 		this.name = name;
