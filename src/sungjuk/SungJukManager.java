@@ -51,12 +51,28 @@ public class SungJukManager {
 		//index 번째 다음 항목부터 count 보다 작을 때까지 앞으로 하나씩 옮김
 		//count--
 		//index = -1 // 초기화
+		System.out.print(nameList[index] + "학생의 정보를 삭제하겠습니까?(Y/N) : ");
+		if(scan.next().charAt(0) =='Y') {
+			for(int i=index; i<count-1; i++) {
+				nameList[i] = nameList[1+1];
+				studentIdList[i] = studentIdList[1+1];
+				jumsuList[i] = jumsuList[1+1];
+			}
+			count--;
+			index = -1;
+		}else {
+			System.out.println("삭제를 취소합니다.");
+		}
 	}
 
 	private static void updateData() {
 		//index 번째 학생 정보 수정
 		System.out.print("이름(" + nameList[index] + ") : ");
 		nameList[index] = scan.next();
+		System.out.print("학번(" + studentIdList[index] + ") : ");
+		studentIdList[index] = scan.next();
+		System.out.print("점수(" + jumsuList[index] + ") : ");
+		jumsuList[index] = scan.nextInt();
 	}
 
 	private static void searchData() {
